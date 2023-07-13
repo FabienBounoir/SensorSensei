@@ -1,0 +1,41 @@
+\hypertarget{location_8cpp_source}{}\doxysubsection{location.\+cpp}
+\label{location_8cpp_source}\index{location.cpp@{location.cpp}}
+\mbox{\hyperlink{location_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00001}00001\ \textcolor{comment}{//\ init\ a\ location\ cpp\ class}}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{location_8hpp}{location.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00004}\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{00004}}\ TinyGPSPlus\ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}};}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00017}\mbox{\hyperlink{class_location_a87790c14997fd8cdd12080c78c9794bb}{00017}}\ \mbox{\hyperlink{class_location_a87790c14997fd8cdd12080c78c9794bb}{Location::Location}}()}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00019}00019\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location\ Class\ Init"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}{longitude}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_location_aa7fa1116e7a00501032a724156ec946a}{latitude}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00024}\mbox{\hyperlink{class_location_af5be2c6550bbd96137cbb3144ec3c529}{00024}}\ \mbox{\hyperlink{class_location_af5be2c6550bbd96137cbb3144ec3c529}{Location::\string~Location}}()}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00026}00026\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location\ Class\ Destroy"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00034}\mbox{\hyperlink{class_location_a2b14ed211a89064536deece3cd3606a9}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_location_a2b14ed211a89064536deece3cd3606a9}{Location::update}}()}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (Serial.available()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.encode(Serial.read());}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.isUpdated())}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}Latitude:\ "{}});}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ Serial.println(\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lat());}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}Longitude:\ "{}});}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ Serial.println(\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lng());}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}{longitude}}\ =\ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lng();}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_location_aa7fa1116e7a00501032a724156ec946a}{latitude}}\ =\ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lat();}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{location_8cpp_source_l00051}00051\ \}}
+
+\end{DoxyCode}

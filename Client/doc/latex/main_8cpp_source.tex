@@ -1,0 +1,84 @@
+\hypertarget{main_8cpp_source}{}\doxysubsection{main.\+cpp}
+\label{main_8cpp_source}\index{main.cpp@{main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../lib/location/location.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{lora_sender_8h}{loraSender.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bmp280_8h}{bmp280.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <GP2YDustSensor.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}\mbox{\hyperlink{main_8cpp_a2dd443a4430713d325ab86895a4a45eb}{00009}}\ \textcolor{preprocessor}{\#define\ SCK\ 5}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}\mbox{\hyperlink{main_8cpp_a7334c540878c8c4d801fd75ed9fd8063}{00010}}\ \textcolor{preprocessor}{\#define\ MISO\ 19}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}\mbox{\hyperlink{main_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}{00011}}\ \textcolor{preprocessor}{\#define\ MOSI\ 27}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}\mbox{\hyperlink{main_8cpp_a88f7782e210e61586baf33b93240d905}{00012}}\ \textcolor{preprocessor}{\#define\ SS\ 18}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}\mbox{\hyperlink{main_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}{00013}}\ \textcolor{preprocessor}{\#define\ RST\ 14}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}\mbox{\hyperlink{main_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}{00014}}\ \textcolor{preprocessor}{\#define\ DIO0\ 26}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}\mbox{\hyperlink{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}{00015}}\ \textcolor{preprocessor}{\#define\ BAND\ 866E6}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}{00017}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}{SHARP\_LED\_PIN}}\ =\ 0x3FF44020;\ \textcolor{comment}{//\ Sharp\ Dust/particle\ sensor\ Led\ Pin\ (PIN\ 32)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}\mbox{\hyperlink{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}{00018}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}{SHARP\_VO\_PIN}}\ =\ 0x3FF44004;\ \ \textcolor{comment}{//\ Sharp\ Dust/particle\ analog\ out\ pin\ used\ for\ reading\ (PIN\ 4)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}\mbox{\hyperlink{location_8hpp_a260defa82d536dcea2aa22452b862110}{00020}}\ \mbox{\hyperlink{class_location}{Location}}\ \mbox{\hyperlink{main_8cpp_a260defa82d536dcea2aa22452b862110}{location}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{00021}}\ GP2YDustSensor\ \mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}(GP2YDustSensorType::GP2Y1010AU0F,\ \mbox{\hyperlink{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}{SHARP\_LED\_PIN}},\ \mbox{\hyperlink{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}{SHARP\_VO\_PIN}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}\mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{00023}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{counter}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{00025}}\ \mbox{\hyperlink{class_bmp280}{Bmp280}}\ \mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}\mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{00026}}\ \mbox{\hyperlink{class_lora_sender}{LoraSender}}\ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}\mbox{\hyperlink{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}{setup}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ Serial.println(\textcolor{stringliteral}{"{}Client\ initializing..."{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \textcolor{comment}{//\ Init\ Serial\ bitrate}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \textcolor{comment}{//\ Init\ LoRa}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_af294751d94399b045a021f9f79107be9}{begin}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \textcolor{comment}{//\ Init\ Bmp280}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a170a7231a6713ba197f1fc6b4b0a8b5e}{begin}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \textcolor{comment}{//\ Init\ Dust\ Sensor}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.begin();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ delay(2000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}\mbox{\hyperlink{main_8cpp_a11debc633c690ca19cb27df5f971d73d}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a11debc633c690ca19cb27df5f971d73d}{loop}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \textcolor{comment}{//\ Get\ Bmp280\ data}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}{readTemperature}}());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ *C"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a5750046c47396786c248cff2ebf219e2}{readPressure}}());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ hPa"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \textcolor{comment}{//\ Get\ Dust\ Sensor\ data}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.getDustDensity());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ Serial.print(\textcolor{stringliteral}{"{}\ ug/m3;\ Running\ average:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.getRunningAverage());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ ug/m3"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ Serial.print(\textcolor{stringliteral}{"{}Sending\ packet\ n°"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{counter}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ :"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \ \ \textcolor{keywordtype}{char}\ *trame\ =\ strcat(\mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_a3a086123486441cc18d37c73d1c8338a}{formatBmp280Data}}(\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}{readTemperature}}(),\ \mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a5750046c47396786c248cff2ebf219e2}{readPressure}}()),\ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_aff87a17e475bf8447e1f65d667b36ee3}{formatDustSensor}}(\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.getDustDensity(),\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ Serial.println(trame);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \ \ \textcolor{comment}{//\ Send\ LoRa\ packet\ to\ receiver}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_a6275a5dec2bf194739fe2668d3048e10}{sendLora}}(trame);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \textcolor{comment}{//\ Get\ Localisation}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \textcolor{comment}{//\ location.update();}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{counter}}++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \textcolor{comment}{//\ Wait\ 10\ seconds\ before\ sending\ the\ next\ packet}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ delay(10000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \}}
+
+\end{DoxyCode}

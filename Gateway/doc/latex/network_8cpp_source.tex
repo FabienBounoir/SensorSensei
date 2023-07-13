@@ -1,0 +1,63 @@
+\doxysubsection{network.\+cpp}
+\hypertarget{network_8cpp_source}{}\label{network_8cpp_source}\index{network.cpp@{network.cpp}}
+\mbox{\hyperlink{network_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{network_8h}{network.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <WiFi.h>}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{network_8h}{network.h}}>}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <HTTPClient.h>}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00022}\mbox{\hyperlink{class_network_af1c8cc8695858157c0cf77d9f15e381b}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_af1c8cc8695858157c0cf77d9f15e381b}{Network::connection}}(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_a587ba0cb07f02913598610049a3bbb79}{ssid}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}{password}})}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00024}00024\ \ \ \ \ WiFi.begin(\mbox{\hyperlink{class_network_a5fc0dcbe1e531a60d246d8bd665d2190}{ssid}},\ \mbox{\hyperlink{class_network_a711c96bccc71814c8dd0b12b280b285e}{password}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00025}00025\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}Connecting\ to\ WiFi"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (WiFi.status()\ !=\ WL\_CONNECTED)}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ delay(100);}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00038}\mbox{\hyperlink{class_network_ae9987a05c6b768857bf48553c1bce933}{00038}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_network_ae9987a05c6b768857bf48553c1bce933}{Network::postBMP}}(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}},\ \textcolor{keywordtype}{char}\ *data)}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00040}00040\ \ \ \ \ HTTPClient\ http;}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00041}00041\ \ \ \ \ http.begin(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00042}00042\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}Content-\/Type"{}},\ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00043}00043\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Sensor"{}},\ \textcolor{stringliteral}{"{}esp32-\/ABDECF"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00044}00044\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Pin"{}},\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{int}\ httpCode\ =\ http.POST(data);}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00046}00046\ \ \ \ \ http.end();}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00048}00048\ \ \ \ \ Serial.println(httpCode);}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return}\ httpCode;}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00058}\mbox{\hyperlink{class_network_a0ac656227e9aeda94abebbdb6712c05d}{00058}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_network_a0ac656227e9aeda94abebbdb6712c05d}{Network::postDust}}(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}},\ \textcolor{keywordtype}{char}\ *data)}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00060}00060\ \ \ \ \ HTTPClient\ http;}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00061}00061\ \ \ \ \ http.begin(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00062}00062\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}Content-\/Type"{}},\ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00063}00063\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Sensor"{}},\ \textcolor{stringliteral}{"{}esp32-\/ABDECF"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00064}00064\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Pin"{}},\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{int}\ httpCode\ =\ http.POST(data);}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00066}00066\ \ \ \ \ http.end();}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00068}00068\ \ \ \ \ Serial.println(httpCode);}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ httpCode;}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00078}\mbox{\hyperlink{class_network_a2e2e9b4a8f669f0f8a6b7348b18ad48c}{00078}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_network_a2e2e9b4a8f669f0f8a6b7348b18ad48c}{Network::get}}(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}})}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00080}00080\ \ \ \ \ HTTPClient\ http;}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00081}00081\ \ \ \ \ http.begin(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{int}\ httpResponseCode\ =\ http.GET();}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00083}00083\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}HTTP\ Response\ code:\ "{}});}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00084}00084\ \ \ \ \ Serial.println(httpResponseCode);}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00085}00085\ \ \ \ \ http.end();}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ httpResponseCode;}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{network_8cpp_source_l00088}\mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{00088}}\ \mbox{\hyperlink{class_network}{Network}}\ \mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}};}
+
+\end{DoxyCode}

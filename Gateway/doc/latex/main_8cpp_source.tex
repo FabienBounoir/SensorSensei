@@ -1,0 +1,217 @@
+\doxysubsection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{main.cpp@{main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <M5Stack.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <LoRa.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{network_8h}{network.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}\mbox{\hyperlink{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}{00014}}\ \textcolor{preprocessor}{\#define\ BAND\ 868E6\ }\textcolor{comment}{//\ LoRa\ frequency\ band}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}\mbox{\hyperlink{main_8cpp_a587ba0cb07f02913598610049a3bbb79}{00016}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_a587ba0cb07f02913598610049a3bbb79}{ssid}}\ =\ \textcolor{stringliteral}{"{}BadIphone"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}{00017}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}{password}}\ =\ \textcolor{stringliteral}{"{}motdepasse"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{00019}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}}\ =\ \textcolor{stringliteral}{"{}http://api.sensor.community/v1/push-\/sensor-\/data/"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}\mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{00021}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{packetCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}\mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{00022}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{goodPacketCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}\mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{00023}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{badPacketCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}\mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ M5.begin();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ M5.Lcd.clear(BLUE);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ M5.Lcd.setTextSize(2);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Initialisation\ de\ la\ gateway"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \textcolor{keywordflow}{while}\ (!LoRa.begin(\mbox{\hyperlink{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}{BAND}}))}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ M5.Lcd.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}LoRa\ initialization\ failed.\ Check\ your\ connections."{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}LoRa\ initialization\ failed.\ Check\ your\ connections."{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ delay(2000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}}.\mbox{\hyperlink{class_network_af1c8cc8695858157c0cf77d9f15e381b}{connection}}(\textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(\mbox{\hyperlink{main_8cpp_a587ba0cb07f02913598610049a3bbb79}{ssid}}),\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(\mbox{\hyperlink{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}{password}}));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ Serial.println(\textcolor{stringliteral}{"{}LoRa\ receiver\ initialized!"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ M5.Lcd.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}LoRa\ receiver\ initialized!"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}\mbox{\hyperlink{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7}{00051}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7}{my\_strcpy}}(\textcolor{keywordtype}{char}\ *dest,\ \textcolor{keywordtype}{char}\ *src)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dest\ ||\ !src)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ src[i];\ i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ dest[i]\ =\ src[i];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ dest[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{return}\ (dest);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}\mbox{\hyperlink{main_8cpp_a25a0b25f76915f917e5dc03d29694d78}{00063}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a25a0b25f76915f917e5dc03d29694d78}{nb\_word}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{char}\ sep1)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{int}\ words\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ var\ =\ 0;\ str[i];\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((str[i]\ !=\ sep1\ \&\&\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)t'})\ \&\&\ var\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ words\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ var\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ sep1\ ||\ str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ var\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ (words);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}\mbox{\hyperlink{main_8cpp_adf7699161932395c1070cc2168385053}{00077}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_adf7699161932395c1070cc2168385053}{create\_word}}(\textcolor{keywordtype}{int}\ *let,\ \textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{char}\ sep1)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{char}\ *word;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ *let\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ str[i]\ ==\ sep1\ ||\ str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'};\ i++);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ (str[i]\ !=\ sep1\ \&\&\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)t'})\ \&\&\ str[i]\ !=\ 0;\ i++,\ *let\ +=\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \ \ *let\ =\ i;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ \ \ word\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ (*let\ +\ 1));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (word\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ str[j]\ ==\ sep1\ ||\ str[j]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'};\ j++);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ j;\ (str[i]\ !=\ sep1\ \&\&\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)t'})\ \&\&}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ str[i]\ !=\ 0;\ i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ word[i\ -\/\ j]\ =\ str[i];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ \ \ \ \ word[i\ -\/\ j]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ (word);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}\mbox{\hyperlink{main_8cpp_ab6c1d5263fe0e110a84e18014361df32}{00098}}\ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{main_8cpp_ab6c1d5263fe0e110a84e18014361df32}{my\_str\_to\_word\_array}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{char}\ sep1)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{int}\ words\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{char}\ *word\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{char}\ **word\_array\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{int}\ letters\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108\ \ \ \ \ words\ =\ \mbox{\hyperlink{main_8cpp_a25a0b25f76915f917e5dc03d29694d78}{nb\_word}}(str,\ sep1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109\ \ \ \ \ word\_array\ =\ (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *)\ *\ (words\ +\ 1));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ words;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ word\ =\ \mbox{\hyperlink{main_8cpp_adf7699161932395c1070cc2168385053}{create\_word}}(\&letters,\ str,\ sep1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ str\ +=\ letters;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ word\_array[i]\ =\ word;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115\ \ \ \ \ word\_array[i]\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ (word\_array);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}\mbox{\hyperlink{main_8cpp_ac7e9bd08d068851e31a5b6d408004638}{00119}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ac7e9bd08d068851e31a5b6d408004638}{my\_strlen}}(\textcolor{keywordtype}{char}\ *str)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (*str\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}\mbox{\hyperlink{main_8cpp_ad80a3532caecf004360141e274e0708d}{00131}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{main_8cpp_ad80a3532caecf004360141e274e0708d}{my\_strdup}}(\textcolor{keywordtype}{char}\ *str)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00132}00132\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{char}\ *new\_str\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00137}00137\ \ \ \ \ new\_str\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ \mbox{\hyperlink{main_8cpp_ac7e9bd08d068851e31a5b6d408004638}{my\_strlen}}(str)\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_str\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7}{my\_strcpy}}(new\_str,\ str);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (new\_str);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00141}00141\ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00150}\mbox{\hyperlink{main_8cpp_a8963e7e82634f917e2407366b8b4b50b}{00150}}\ \textcolor{keywordtype}{char}**\ \mbox{\hyperlink{main_8cpp_a8963e7e82634f917e2407366b8b4b50b}{deconstruct}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *trame)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00151}00151\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00152}00152\ \ \ \textcolor{keywordtype}{char}\ *copy\ =\ strdup(trame);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00153}00153\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{main_8cpp_ab6c1d5263fe0e110a84e18014361df32}{my\_str\_to\_word\_array}}(copy,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00161}\mbox{\hyperlink{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56}{00161}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56}{clearStringTable}}(\textcolor{keywordtype}{char}\ *str[])}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00162}00162\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00163}00163\ \ \ \textcolor{keywordtype}{int}\ arrayLength\ =\ \textcolor{keyword}{sizeof}(str)\ /\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00165}00165\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ arrayLength;\ i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00166}00166\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00167}00167\ \ \ \ \ str[i]\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00168}00168\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00169}00169\ \ \ Serial.println(\textcolor{stringliteral}{"{}All\ strings\ cleared"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00172}\mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{00172}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00173}00173\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00175}00175\ \ \ \textcolor{keywordtype}{int}\ packetSize\ =\ LoRa.parsePacket();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00176}00176\ \ \ \textcolor{keywordflow}{if}\ (packetSize)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00177}00177\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00178}00178\ \ \ \ \ \ \ M5.Lcd.clear(BLUE);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00179}00179\ \ \ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00180}00180\ \ \ \ \ M5.Lcd.setTextSize(2);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00181}00181\ \ \ \ \ M5.Lcd.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00183}00183\ \ \ \ \ \mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{packetCount}}++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00185}00185\ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Packet\ received:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00186}00186\ \ \ \ \ M5.Lcd.println(\mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{packetCount}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keywordflow}{while}\ (LoRa.available())}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00189}00189\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00190}00190\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **data\ =\ \mbox{\hyperlink{main_8cpp_a8963e7e82634f917e2407366b8b4b50b}{deconstruct}}(LoRa.readString().c\_str());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String(data[0])\ ==\ \textcolor{stringliteral}{"{}SENSOUNS"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00192}00192\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{goodPacketCount}}++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ std::string\ messageBMP\ =\ std::string(\textcolor{stringliteral}{"{}\{\(\backslash\)"{}sensordatavalues\(\backslash\)"{}:[\{\(\backslash\)"{}value\_type\(\backslash\)"{}:\(\backslash\)"{}temperature\(\backslash\)"{},\(\backslash\)"{}value\(\backslash\)"{}:\(\backslash\)"{}"{}})\ +\ std::string(data[3])\ +\ std::string(\textcolor{stringliteral}{"{}\(\backslash\)"{}\},\{\(\backslash\)"{}value\_type\(\backslash\)"{}:\(\backslash\)"{}pressure\(\backslash\)"{},\(\backslash\)"{}value\(\backslash\)"{}:\(\backslash\)"{}"{}})\ +\ std::string(data[5])\ +\ std::string(\textcolor{stringliteral}{"{}\(\backslash\)"{}\}]\}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}Message:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ M5.Lcd.println(messageBMP.c\_str());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Message:\ "{}}\ +\ String(messageBMP.c\_str()));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}HTTP\ code:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ M5.Lcd.print(\mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}}.\mbox{\hyperlink{class_network_ae9987a05c6b768857bf48553c1bce933}{postBMP}}(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}},\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(messageBMP.c\_str())));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ std::string\ messageDust\ =\ std::string(\textcolor{stringliteral}{"{}\{\(\backslash\)"{}sensordatavalues\(\backslash\)"{}:[\{\(\backslash\)"{}value\_type\(\backslash\)"{}:\(\backslash\)"{}P1\(\backslash\)"{},\(\backslash\)"{}value\(\backslash\)"{}:\(\backslash\)"{}"{}})\ +\ std::string(data[7])\ +\ std::string(\textcolor{stringliteral}{"{}\(\backslash\)"{}\}]\}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Message:\ "{}}\ +\ String(messageDust.c\_str()));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ M5.Lcd.print(\mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}}.\mbox{\hyperlink{class_network_a0ac656227e9aeda94abebbdb6712c05d}{postDust}}(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}},\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(messageDust.c\_str())));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56}{clearStringTable}}(data);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00212}00212\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00213}00213\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00214}00214\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{badPacketCount}}++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Erreur\ mauvaise\ trame"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00217}00217\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00218}00218\ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Data:\ "{}}\ +\ String(data[0]));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00220}00220\ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00221}00221\ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00222}00222\ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Good\ packets:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00223}00223\ \ \ \ \ \ \ M5.Lcd.println(\mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{goodPacketCount}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00224}00224\ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Bad\ packets:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00225}00225\ \ \ \ \ \ \ M5.Lcd.println(\mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{badPacketCount}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00227}00227\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00228}00228\ \}}
+
+\end{DoxyCode}

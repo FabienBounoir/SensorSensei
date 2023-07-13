@@ -1,0 +1,525 @@
+\doxysubsection{Référence du fichier main.\+cpp}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$M5\+Stack.\+h$>$}\newline
+{\ttfamily \#include $<$Lo\+Ra.\+h$>$}\newline
+{\ttfamily \#include $<$network.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}{BAND}}~868E6
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56}{clear\+String\+Table}} (char \texorpdfstring{$\ast$}{*}str\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Clear a string table. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_adf7699161932395c1070cc2168385053}{create\+\_\+word}} (int \texorpdfstring{$\ast$}{*}let, char \texorpdfstring{$\ast$}{*}str, char sep1)
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a8963e7e82634f917e2407366b8b4b50b}{deconstruct}} (const char \texorpdfstring{$\ast$}{*}trame)
+\begin{DoxyCompactList}\small\item\em Deconstruct a trame into a string table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_ab6c1d5263fe0e110a84e18014361df32}{my\+\_\+str\+\_\+to\+\_\+word\+\_\+array}} (char \texorpdfstring{$\ast$}{*}str, char sep1)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7}{my\+\_\+strcpy}} (char \texorpdfstring{$\ast$}{*}dest, char \texorpdfstring{$\ast$}{*}src)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_ad80a3532caecf004360141e274e0708d}{my\+\_\+strdup}} (char \texorpdfstring{$\ast$}{*}str)
+\item 
+int \mbox{\hyperlink{main_8cpp_ac7e9bd08d068851e31a5b6d408004638}{my\+\_\+strlen}} (char \texorpdfstring{$\ast$}{*}str)
+\item 
+int \mbox{\hyperlink{main_8cpp_a25a0b25f76915f917e5dc03d29694d78}{nb\+\_\+word}} (char \texorpdfstring{$\ast$}{*}str, char sep1)
+\item 
+void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{bad\+Packet\+Count}} = 0
+\item 
+int \mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{good\+Packet\+Count}} = 0
+\item 
+int \mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{packet\+Count}} = 0
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}{password}} = \"{}motdepasse\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a587ba0cb07f02913598610049a3bbb79}{ssid}} = \"{}Bad\+Iphone\"{}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}} = \"{}http\+://api.\+sensor.\+community/v1/push-\/sensor-\/data/\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentation des macros}
+\Hypertarget{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}\label{main_8cpp_ab57e5c97e5d788f048284f1175c757b7} 
+\index{main.cpp@{main.cpp}!BAND@{BAND}}
+\index{BAND@{BAND}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{BAND}{BAND}}
+{\footnotesize\ttfamily \#define BAND~868E6}
+
+Team Epitech (FPKGA)
+
+Programme utilisé pour la gateway Lo\+Ra V 1.\+0 
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsubsection{Documentation des fonctions}
+\Hypertarget{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56}\label{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56} 
+\index{main.cpp@{main.cpp}!clearStringTable@{clearStringTable}}
+\index{clearStringTable@{clearStringTable}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{clearStringTable()}{clearStringTable()}}
+{\footnotesize\ttfamily clear\+String\+Table (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Clear a string table. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00161}{161}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \textcolor{keywordtype}{int}\ arrayLength\ =\ \textcolor{keyword}{sizeof}(str)\ /\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ arrayLength;\ i++)}
+\DoxyCodeLine{00166\ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ str[i]\ =\ NULL;}
+\DoxyCodeLine{00168\ \ \ \}}
+\DoxyCodeLine{00169\ \ \ Serial.println(\textcolor{stringliteral}{"{}All\ strings\ cleared"{}});}
+\DoxyCodeLine{00170\ \}}
+
+\end{DoxyCode}
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+\Hypertarget{main_8cpp_adf7699161932395c1070cc2168385053}\label{main_8cpp_adf7699161932395c1070cc2168385053} 
+\index{main.cpp@{main.cpp}!create\_word@{create\_word}}
+\index{create\_word@{create\_word}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{create\_word()}{create\_word()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} create\+\_\+word (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{let,  }\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char}]{sep1 }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00077}{77}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{char}\ *word;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ *let\ =\ 0;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ str[i]\ ==\ sep1\ ||\ str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'};\ i++);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ (str[i]\ !=\ sep1\ \&\&\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)t'})\ \&\&\ str[i]\ !=\ 0;\ i++,\ *let\ +=\ 1);}
+\DoxyCodeLine{00086\ \ \ \ \ *let\ =\ i;}
+\DoxyCodeLine{00087\ \ \ \ \ word\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ (*let\ +\ 1));}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (word\ ==\ NULL)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ str[j]\ ==\ sep1\ ||\ str[j]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'};\ j++);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ j;\ (str[i]\ !=\ sep1\ \&\&\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)t'})\ \&\&}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ str[i]\ !=\ 0;\ i++)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ word[i\ -\/\ j]\ =\ str[i];}
+\DoxyCodeLine{00094\ \ \ \ \ word[i\ -\/\ j]\ =\ 0;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ (word);}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00098}{my\+\_\+str\+\_\+to\+\_\+word\+\_\+array()}}.
+
+\Hypertarget{main_8cpp_a8963e7e82634f917e2407366b8b4b50b}\label{main_8cpp_a8963e7e82634f917e2407366b8b4b50b} 
+\index{main.cpp@{main.cpp}!deconstruct@{deconstruct}}
+\index{deconstruct@{deconstruct}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{deconstruct()}{deconstruct()}}
+{\footnotesize\ttfamily deconstruct (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{trame }\end{DoxyParamCaption})}
+
+
+
+Deconstruct a trame into a string table. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00150}{150}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151\ \{}
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordtype}{char}\ *copy\ =\ strdup(trame);}
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{main_8cpp_ab6c1d5263fe0e110a84e18014361df32}{my\_str\_to\_word\_array}}(copy,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00154\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00098}{my\+\_\+str\+\_\+to\+\_\+word\+\_\+array()}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00172}{172}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \{}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{int}\ packetSize\ =\ LoRa.parsePacket();}
+\DoxyCodeLine{00176\ \ \ \textcolor{keywordflow}{if}\ (packetSize)}
+\DoxyCodeLine{00177\ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ M5.Lcd.clear(BLUE);}
+\DoxyCodeLine{00179\ \ \ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{00180\ \ \ \ \ M5.Lcd.setTextSize(2);}
+\DoxyCodeLine{00181\ \ \ \ \ M5.Lcd.clear();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{packetCount}}++;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Packet\ received:\ "{}});}
+\DoxyCodeLine{00186\ \ \ \ \ M5.Lcd.println(\mbox{\hyperlink{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}{packetCount}});}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{while}\ (LoRa.available())}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **data\ =\ \mbox{\hyperlink{main_8cpp_a8963e7e82634f917e2407366b8b4b50b}{deconstruct}}(LoRa.readString().c\_str());}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String(data[0])\ ==\ \textcolor{stringliteral}{"{}SENSOUNS"{}})}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{goodPacketCount}}++;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ std::string\ messageBMP\ =\ std::string(\textcolor{stringliteral}{"{}\{\(\backslash\)"{}sensordatavalues\(\backslash\)"{}:[\{\(\backslash\)"{}value\_type\(\backslash\)"{}:\(\backslash\)"{}temperature\(\backslash\)"{},\(\backslash\)"{}value\(\backslash\)"{}:\(\backslash\)"{}"{}})\ +\ std::string(data[3])\ +\ std::string(\textcolor{stringliteral}{"{}\(\backslash\)"{}\},\{\(\backslash\)"{}value\_type\(\backslash\)"{}:\(\backslash\)"{}pressure\(\backslash\)"{},\(\backslash\)"{}value\(\backslash\)"{}:\(\backslash\)"{}"{}})\ +\ std::string(data[5])\ +\ std::string(\textcolor{stringliteral}{"{}\(\backslash\)"{}\}]\}"{}});}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}Message:\ "{}});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ M5.Lcd.println(messageBMP.c\_str());}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Message:\ "{}}\ +\ String(messageBMP.c\_str()));}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}HTTP\ code:\ "{}});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ M5.Lcd.print(\mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}}.\mbox{\hyperlink{class_network_ae9987a05c6b768857bf48553c1bce933}{postBMP}}(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}},\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(messageBMP.c\_str())));}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ std::string\ messageDust\ =\ std::string(\textcolor{stringliteral}{"{}\{\(\backslash\)"{}sensordatavalues\(\backslash\)"{}:[\{\(\backslash\)"{}value\_type\(\backslash\)"{}:\(\backslash\)"{}P1\(\backslash\)"{},\(\backslash\)"{}value\(\backslash\)"{}:\(\backslash\)"{}"{}})\ +\ std::string(data[7])\ +\ std::string(\textcolor{stringliteral}{"{}\(\backslash\)"{}\}]\}"{}});}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Message:\ "{}}\ +\ String(messageDust.c\_str()));}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ M5.Lcd.print(\mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}}.\mbox{\hyperlink{class_network_a0ac656227e9aeda94abebbdb6712c05d}{postDust}}(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}},\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(messageDust.c\_str())));}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a968807a1f7a7f8b46193861d6ad9bb56}{clearStringTable}}(data);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{badPacketCount}}++;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Erreur\ mauvaise\ trame"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Data:\ "{}}\ +\ String(data[0]));}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ M5.Lcd.println(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Good\ packets:\ "{}});}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ M5.Lcd.println(\mbox{\hyperlink{main_8cpp_a525588daccd085d3b733af7f1e033628}{goodPacketCount}});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Bad\ packets:\ "{}});}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ M5.Lcd.println(\mbox{\hyperlink{main_8cpp_ae808ed0e476c137395fc919cfd708d42}{badPacketCount}});}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \}}
+\DoxyCodeLine{00228\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00023}{bad\+Packet\+Count}}, \mbox{\hyperlink{main_8cpp_source_l00161}{clear\+String\+Table()}}, \mbox{\hyperlink{main_8cpp_source_l00150}{deconstruct()}}, \mbox{\hyperlink{main_8cpp_source_l00022}{good\+Packet\+Count}}, \mbox{\hyperlink{network_8cpp_source_l00088}{network}}, \mbox{\hyperlink{main_8cpp_source_l00021}{packet\+Count}}, \mbox{\hyperlink{network_8cpp_source_l00038}{Network\+::post\+BMP()}}, \mbox{\hyperlink{network_8cpp_source_l00058}{Network\+::post\+Dust()}}, et \mbox{\hyperlink{main_8cpp_source_l00019}{url}}.
+
+\Hypertarget{main_8cpp_ab6c1d5263fe0e110a84e18014361df32}\label{main_8cpp_ab6c1d5263fe0e110a84e18014361df32} 
+\index{main.cpp@{main.cpp}!my\_str\_to\_word\_array@{my\_str\_to\_word\_array}}
+\index{my\_str\_to\_word\_array@{my\_str\_to\_word\_array}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{my\_str\_to\_word\_array()}{my\_str\_to\_word\_array()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} my\+\_\+str\+\_\+to\+\_\+word\+\_\+array (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char}]{sep1 }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00098}{98}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ words\ =\ 0;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{char}\ *word\ =\ NULL;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{char}\ **word\_array\ =\ NULL;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ letters\ =\ 0;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ NULL)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00108\ \ \ \ \ words\ =\ \mbox{\hyperlink{main_8cpp_a25a0b25f76915f917e5dc03d29694d78}{nb\_word}}(str,\ sep1);}
+\DoxyCodeLine{00109\ \ \ \ \ word\_array\ =\ (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *)\ *\ (words\ +\ 1));}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ words;\ i++)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ word\ =\ \mbox{\hyperlink{main_8cpp_adf7699161932395c1070cc2168385053}{create\_word}}(\&letters,\ str,\ sep1);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ str\ +=\ letters;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ word\_array[i]\ =\ word;}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ word\_array[i]\ =\ NULL;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ (word\_array);}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00077}{create\+\_\+word()}}, et \mbox{\hyperlink{main_8cpp_source_l00063}{nb\+\_\+word()}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00150}{deconstruct()}}.
+
+\Hypertarget{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7}\label{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7} 
+\index{main.cpp@{main.cpp}!my\_strcpy@{my\_strcpy}}
+\index{my\_strcpy@{my\_strcpy}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{my\_strcpy()}{my\_strcpy()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} my\+\_\+strcpy (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{char \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00051}{51}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dest\ ||\ !src)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ src[i];\ i++)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ dest[i]\ =\ src[i];}
+\DoxyCodeLine{00059\ \ \ \ \ dest[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ (dest);}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00131}{my\+\_\+strdup()}}.
+
+\Hypertarget{main_8cpp_ad80a3532caecf004360141e274e0708d}\label{main_8cpp_ad80a3532caecf004360141e274e0708d} 
+\index{main.cpp@{main.cpp}!my\_strdup@{my\_strdup}}
+\index{my\_strdup@{my\_strdup}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{my\_strdup()}{my\_strdup()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} my\+\_\+strdup (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00131}{131}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{char}\ *new\_str\ =\ NULL;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00137\ \ \ \ \ new\_str\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ \mbox{\hyperlink{main_8cpp_ac7e9bd08d068851e31a5b6d408004638}{my\_strlen}}(str)\ +\ 1);}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_str\ !=\ NULL)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a73fd71e5a924f50c46bbdfb8b76fc6f7}{my\_strcpy}}(new\_str,\ str);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (new\_str);}
+\DoxyCodeLine{00141\ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00143\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00051}{my\+\_\+strcpy()}}, et \mbox{\hyperlink{main_8cpp_source_l00119}{my\+\_\+strlen()}}.
+
+\Hypertarget{main_8cpp_ac7e9bd08d068851e31a5b6d408004638}\label{main_8cpp_ac7e9bd08d068851e31a5b6d408004638} 
+\index{main.cpp@{main.cpp}!my\_strlen@{my\_strlen}}
+\index{my\_strlen@{my\_strlen}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{my\_strlen()}{my\_strlen()}}
+{\footnotesize\ttfamily int my\+\_\+strlen (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00119}{119}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (*str\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00131}{my\+\_\+strdup()}}.
+
+\Hypertarget{main_8cpp_a25a0b25f76915f917e5dc03d29694d78}\label{main_8cpp_a25a0b25f76915f917e5dc03d29694d78} 
+\index{main.cpp@{main.cpp}!nb\_word@{nb\_word}}
+\index{nb\_word@{nb\_word}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{nb\_word()}{nb\_word()}}
+{\footnotesize\ttfamily int nb\+\_\+word (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char}]{sep1 }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00063}{63}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ words\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ var\ =\ 0;\ str[i];\ i++)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((str[i]\ !=\ sep1\ \&\&\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)t'})\ \&\&\ var\ ==\ 0)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ words\ +=\ 1;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ var\ =\ 1;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ sep1\ ||\ str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ var\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ (words);}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00098}{my\+\_\+str\+\_\+to\+\_\+word\+\_\+array()}}.
+
+\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ M5.begin();}
+\DoxyCodeLine{00028\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ M5.Lcd.clear(BLUE);}
+\DoxyCodeLine{00031\ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{00032\ \ \ M5.Lcd.setTextSize(2);}
+\DoxyCodeLine{00033\ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}Initialisation\ de\ la\ gateway"{}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordflow}{while}\ (!LoRa.begin(\mbox{\hyperlink{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}{BAND}}))}
+\DoxyCodeLine{00036\ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ M5.Lcd.clear();}
+\DoxyCodeLine{00038\ \ \ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{00039\ \ \ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}LoRa\ initialization\ failed.\ Check\ your\ connections."{}});}
+\DoxyCodeLine{00040\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}LoRa\ initialization\ failed.\ Check\ your\ connections."{}});}
+\DoxyCodeLine{00041\ \ \ \ \ delay(2000);}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{network_8cpp_a2d9a64328e83ad37af17cbeb5e73b5df}{network}}.\mbox{\hyperlink{class_network_af1c8cc8695858157c0cf77d9f15e381b}{connection}}(\textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(\mbox{\hyperlink{main_8cpp_a587ba0cb07f02913598610049a3bbb79}{ssid}}),\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(\mbox{\hyperlink{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}{password}}));}
+\DoxyCodeLine{00044\ \ \ Serial.println(\textcolor{stringliteral}{"{}LoRa\ receiver\ initialized!"{}});}
+\DoxyCodeLine{00045\ \ \ M5.Lcd.clear();}
+\DoxyCodeLine{00046\ \ \ M5.Lcd.setCursor(0,\ 0);}
+\DoxyCodeLine{00047\ \ \ M5.Lcd.print(\textcolor{stringliteral}{"{}LoRa\ receiver\ initialized!"{}});}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00014}{BAND}}, \mbox{\hyperlink{network_8cpp_source_l00022}{Network\+::connection()}}, \mbox{\hyperlink{network_8cpp_source_l00088}{network}}, \mbox{\hyperlink{main_8cpp_source_l00017}{password}}, et \mbox{\hyperlink{main_8cpp_source_l00016}{ssid}}.
+
+
+
+\doxysubsubsection{Documentation des variables}
+\Hypertarget{main_8cpp_ae808ed0e476c137395fc919cfd708d42}\label{main_8cpp_ae808ed0e476c137395fc919cfd708d42} 
+\index{main.cpp@{main.cpp}!badPacketCount@{badPacketCount}}
+\index{badPacketCount@{badPacketCount}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{badPacketCount}{badPacketCount}}
+{\footnotesize\ttfamily int bad\+Packet\+Count = 0}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00023}{23}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+\Hypertarget{main_8cpp_a525588daccd085d3b733af7f1e033628}\label{main_8cpp_a525588daccd085d3b733af7f1e033628} 
+\index{main.cpp@{main.cpp}!goodPacketCount@{goodPacketCount}}
+\index{goodPacketCount@{goodPacketCount}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{goodPacketCount}{goodPacketCount}}
+{\footnotesize\ttfamily int good\+Packet\+Count = 0}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00022}{22}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+\Hypertarget{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad}\label{main_8cpp_af4aa4a4cc5c767005e8fd10bb0d1acad} 
+\index{main.cpp@{main.cpp}!packetCount@{packetCount}}
+\index{packetCount@{packetCount}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{packetCount}{packetCount}}
+{\footnotesize\ttfamily int packet\+Count = 0}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00021}{21}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+\Hypertarget{main_8cpp_aa4a2ebcb494493f648ae1e6975672575}\label{main_8cpp_aa4a2ebcb494493f648ae1e6975672575} 
+\index{main.cpp@{main.cpp}!password@{password}}
+\index{password@{password}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} password = \"{}motdepasse\"{}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00017}{17}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00025}{setup()}}.
+
+\Hypertarget{main_8cpp_a587ba0cb07f02913598610049a3bbb79}\label{main_8cpp_a587ba0cb07f02913598610049a3bbb79} 
+\index{main.cpp@{main.cpp}!ssid@{ssid}}
+\index{ssid@{ssid}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{ssid}{ssid}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} ssid = \"{}Bad\+Iphone\"{}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00016}{16}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00025}{setup()}}.
+
+\Hypertarget{main_8cpp_ab135e5154c1828bef226a3df98ee3333}\label{main_8cpp_ab135e5154c1828bef226a3df98ee3333} 
+\index{main.cpp@{main.cpp}!url@{url}}
+\index{url@{url}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} url = \"{}http\+://api.\+sensor.\+community/v1/push-\/sensor-\/data/\"{}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{network_8cpp_source_l00078}{Network\+::get()}}, \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}, \mbox{\hyperlink{network_8cpp_source_l00038}{Network\+::post\+BMP()}}, et \mbox{\hyperlink{network_8cpp_source_l00058}{Network\+::post\+Dust()}}.
+

@@ -1,0 +1,302 @@
+\hypertarget{main_8cpp}{}\doxysubsection{Référence du fichier main.\+cpp}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../lib/location/location.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$lora\+Sender.\+h$>$}\newline
+{\ttfamily \#include $<$bmp280.\+h$>$}\newline
+{\ttfamily \#include $<$GP2\+YDust\+Sensor.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}{BAND}}~866E6
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}{DIO0}}~26
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a7334c540878c8c4d801fd75ed9fd8063}{MISO}}~19
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}{MOSI}}~27
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}{RST}}~14
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a2dd443a4430713d325ab86895a4a45eb}{SCK}}~5
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a88f7782e210e61586baf33b93240d905}{SS}}~18
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+GP2\+YDust\+Sensor \mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dust\+Sensor}} (GP2\+YDust\+Sensor\+Type\+::\+GP2\+Y1010\+AU0F, \mbox{\hyperlink{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}{SHARP\+\_\+\+LED\+\_\+\+PIN}}, \mbox{\hyperlink{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}{SHARP\+\_\+\+VO\+\_\+\+PIN}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a11debc633c690ca19cb27df5f971d73d}{loop}} ()
+\begin{DoxyCompactList}\small\item\em The main loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Setup the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bmp280}{Bmp280}} \mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{counter}} = 0
+\item 
+\mbox{\hyperlink{class_location}{Location}} \mbox{\hyperlink{main_8cpp_a260defa82d536dcea2aa22452b862110}{location}}
+\item 
+\mbox{\hyperlink{class_lora_sender}{Lora\+Sender}} \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}{SHARP\+\_\+\+LED\+\_\+\+PIN}} = 0x3\+FF44020
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}{SHARP\+\_\+\+VO\+\_\+\+PIN}} = 0x3\+FF44004
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentation des macros}
+\mbox{\Hypertarget{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}\label{main_8cpp_ab57e5c97e5d788f048284f1175c757b7}} 
+\index{main.cpp@{main.cpp}!BAND@{BAND}}
+\index{BAND@{BAND}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{BAND}{BAND}}
+{\footnotesize\ttfamily \#define BAND~866E6}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}\label{main_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}} 
+\index{main.cpp@{main.cpp}!DIO0@{DIO0}}
+\index{DIO0@{DIO0}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{DIO0}{DIO0}}
+{\footnotesize\ttfamily \#define DIO0~26}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a7334c540878c8c4d801fd75ed9fd8063}\label{main_8cpp_a7334c540878c8c4d801fd75ed9fd8063}} 
+\index{main.cpp@{main.cpp}!MISO@{MISO}}
+\index{MISO@{MISO}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{MISO}{MISO}}
+{\footnotesize\ttfamily \#define MISO~19}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00010}{10}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}\label{main_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}} 
+\index{main.cpp@{main.cpp}!MOSI@{MOSI}}
+\index{MOSI@{MOSI}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{MOSI}{MOSI}}
+{\footnotesize\ttfamily \#define MOSI~27}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00011}{11}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}\label{main_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}} 
+\index{main.cpp@{main.cpp}!RST@{RST}}
+\index{RST@{RST}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{RST}{RST}}
+{\footnotesize\ttfamily \#define RST~14}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a2dd443a4430713d325ab86895a4a45eb}\label{main_8cpp_a2dd443a4430713d325ab86895a4a45eb}} 
+\index{main.cpp@{main.cpp}!SCK@{SCK}}
+\index{SCK@{SCK}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{SCK}{SCK}}
+{\footnotesize\ttfamily \#define SCK~5}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00009}{9}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a88f7782e210e61586baf33b93240d905}\label{main_8cpp_a88f7782e210e61586baf33b93240d905}} 
+\index{main.cpp@{main.cpp}!SS@{SS}}
+\index{SS@{SS}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{SS}{SS}}
+{\footnotesize\ttfamily \#define SS~18}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00012}{12}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsubsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_8cpp_ae124108fb519b278f76d3bdca3f38440}\label{main_8cpp_ae124108fb519b278f76d3bdca3f38440}} 
+\index{main.cpp@{main.cpp}!dustSensor@{dustSensor}}
+\index{dustSensor@{dustSensor}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{dustSensor()}{dustSensor()}}
+{\footnotesize\ttfamily GP2\+YDust\+Sensor dust\+Sensor (\begin{DoxyParamCaption}\item[{GP2\+YDust\+Sensor\+Type\+::\+GP2\+Y1010\+AU0F}]{,  }\item[{\mbox{\hyperlink{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}{SHARP\+\_\+\+LED\+\_\+\+PIN}}}]{,  }\item[{\mbox{\hyperlink{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}{SHARP\+\_\+\+VO\+\_\+\+PIN}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}, et \mbox{\hyperlink{main_8cpp_source_l00033}{setup()}}.
+
+\mbox{\Hypertarget{main_8cpp_a11debc633c690ca19cb27df5f971d73d}\label{main_8cpp_a11debc633c690ca19cb27df5f971d73d}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The main loop. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00057}{57}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Get\ Bmp280\ data}}
+\DoxyCodeLine{00060\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}{readTemperature}}());}
+\DoxyCodeLine{00061\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ *C"{}});}
+\DoxyCodeLine{00062\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a5750046c47396786c248cff2ebf219e2}{readPressure}}());}
+\DoxyCodeLine{00063\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ hPa"{}});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Get\ Dust\ Sensor\ data}}
+\DoxyCodeLine{00066\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.getDustDensity());}
+\DoxyCodeLine{00067\ \ \ Serial.print(\textcolor{stringliteral}{"{}\ ug/m3;\ Running\ average:\ "{}});}
+\DoxyCodeLine{00068\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.getRunningAverage());}
+\DoxyCodeLine{00069\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ ug/m3"{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ Serial.print(\textcolor{stringliteral}{"{}Sending\ packet\ n°"{}});}
+\DoxyCodeLine{00072\ \ \ Serial.print(\mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{counter}});}
+\DoxyCodeLine{00073\ \ \ Serial.println(\textcolor{stringliteral}{"{}\ :"{}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{char}\ *trame\ =\ strcat(\mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_a3a086123486441cc18d37c73d1c8338a}{formatBmp280Data}}(\mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}{readTemperature}}(),\ \mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a5750046c47396786c248cff2ebf219e2}{readPressure}}()),\ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_aff87a17e475bf8447e1f65d667b36ee3}{formatDustSensor}}(\mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.getDustDensity(),\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00076\ \ \ Serial.println(trame);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ Send\ LoRa\ packet\ to\ receiver}}
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_a6275a5dec2bf194739fe2668d3048e10}{sendLora}}(trame);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ Get\ Localisation}}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ location.update();}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{main_8cpp_a617a47c70795bcff659815ad0efd2266}{counter}}++;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ Wait\ 10\ seconds\ before\ sending\ the\ next\ packet}}
+\DoxyCodeLine{00087\ \ \ delay(10000);}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00025}{bmp280}}, \mbox{\hyperlink{main_8cpp_source_l00023}{counter}}, \mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dust\+Sensor()}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00069}{Lora\+Sender\+::format\+Bmp280\+Data()}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00083}{Lora\+Sender\+::format\+Dust\+Sensor()}}, \mbox{\hyperlink{main_8cpp_source_l00026}{lora}}, \mbox{\hyperlink{bmp280_8cpp_source_l00044}{Bmp280\+::read\+Pressure()}}, \mbox{\hyperlink{bmp280_8cpp_source_l00034}{Bmp280\+::read\+Temperature()}}, et \mbox{\hyperlink{lora_sender_8cpp_source_l00097}{Lora\+Sender\+::send\+Lora()}}.
+
+\mbox{\Hypertarget{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}\label{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Setup the client. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00033}{33}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ Serial.println(\textcolor{stringliteral}{"{}Client\ initializing..."{}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ Init\ Serial\ bitrate}}
+\DoxyCodeLine{00038\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ Init\ LoRa}}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}{lora}}.\mbox{\hyperlink{class_lora_sender_af294751d94399b045a021f9f79107be9}{begin}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Init\ Bmp280}}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}{bmp280}}.\mbox{\hyperlink{class_bmp280_a170a7231a6713ba197f1fc6b4b0a8b5e}{begin}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Init\ Dust\ Sensor}}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dustSensor}}.begin();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ delay(2000);}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{bmp280_8cpp_source_l00023}{Bmp280\+::begin()}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00043}{Lora\+Sender\+::begin()}}, \mbox{\hyperlink{main_8cpp_source_l00025}{bmp280}}, \mbox{\hyperlink{main_8cpp_ae124108fb519b278f76d3bdca3f38440}{dust\+Sensor()}}, et \mbox{\hyperlink{main_8cpp_source_l00026}{lora}}.
+
+
+
+\doxysubsubsection{Documentation des variables}
+\mbox{\Hypertarget{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}\label{main_8cpp_a0e7929dc3deb2fd11e507028d3e65539}} 
+\index{main.cpp@{main.cpp}!bmp280@{bmp280}}
+\index{bmp280@{bmp280}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{bmp280}{bmp280}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bmp280}{Bmp280}} bmp280}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}, et \mbox{\hyperlink{main_8cpp_source_l00033}{setup()}}.
+
+\mbox{\Hypertarget{main_8cpp_a617a47c70795bcff659815ad0efd2266}\label{main_8cpp_a617a47c70795bcff659815ad0efd2266}} 
+\index{main.cpp@{main.cpp}!counter@{counter}}
+\index{counter@{counter}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily int counter = 0}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00023}{23}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}.
+
+\mbox{\Hypertarget{main_8cpp_a260defa82d536dcea2aa22452b862110}\label{main_8cpp_a260defa82d536dcea2aa22452b862110}} 
+\index{main.cpp@{main.cpp}!location@{location}}
+\index{location@{location}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_location}{Location}} location}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00020}{20}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}\label{main_8cpp_a7dda1bbb331932228c0935aa496a2d7b}} 
+\index{main.cpp@{main.cpp}!lora@{lora}}
+\index{lora@{lora}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{lora}{lora}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}} lora}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00026}{26}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}, et \mbox{\hyperlink{main_8cpp_source_l00033}{setup()}}.
+
+\mbox{\Hypertarget{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}\label{main_8cpp_a56aa419ac217261571c5d29a79ee3d71}} 
+\index{main.cpp@{main.cpp}!SHARP\_LED\_PIN@{SHARP\_LED\_PIN}}
+\index{SHARP\_LED\_PIN@{SHARP\_LED\_PIN}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{SHARP\_LED\_PIN}{SHARP\_LED\_PIN}}
+{\footnotesize\ttfamily const uint8\+\_\+t SHARP\+\_\+\+LED\+\_\+\+PIN = 0x3\+FF44020}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00017}{17}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}\label{main_8cpp_a1a38984b9cd3a58fc9f85d0aa3ef53cb}} 
+\index{main.cpp@{main.cpp}!SHARP\_VO\_PIN@{SHARP\_VO\_PIN}}
+\index{SHARP\_VO\_PIN@{SHARP\_VO\_PIN}!main.cpp@{main.cpp}}
+\doxyparagraph{\texorpdfstring{SHARP\_VO\_PIN}{SHARP\_VO\_PIN}}
+{\footnotesize\ttfamily const uint8\+\_\+t SHARP\+\_\+\+VO\+\_\+\+PIN = 0x3\+FF44004}
+
+
+
+Définition à la ligne \mbox{\hyperlink{main_8cpp_source_l00018}{18}} du fichier \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

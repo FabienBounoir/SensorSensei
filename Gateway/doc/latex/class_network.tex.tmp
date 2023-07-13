@@ -1,0 +1,226 @@
+\doxysubsection{Référence de la classe Network}
+\hypertarget{class_network}{}\label{class_network}\index{Network@{Network}}
+
+
+Declaration of the class \doxylink{class_network}{Network}.  
+
+
+
+
+{\ttfamily \#include $<$network.\+h$>$}
+
+
+
+Graphe de collaboration de Network\+:
+% FIG 0
+\doxysubsubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_af1c8cc8695858157c0cf77d9f15e381b}{connection}} (char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_network_a5fc0dcbe1e531a60d246d8bd665d2190}{ssid}}, char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_network_a711c96bccc71814c8dd0b12b280b285e}{password}})
+\begin{DoxyCompactList}\small\item\em Etablish a connection to the network. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_network_a2e2e9b4a8f669f0f8a6b7348b18ad48c}{get}} (char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}})
+\begin{DoxyCompactList}\small\item\em Get data from the API. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_network_ae9987a05c6b768857bf48553c1bce933}{post\+BMP}} (char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}}, char \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Send BMP data to the API. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_network_a0ac656227e9aeda94abebbdb6712c05d}{post\+Dust}} (char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}}, char \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Send Dust data to the API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_network_a711c96bccc71814c8dd0b12b280b285e}{password}}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_network_a5fc0dcbe1e531a60d246d8bd665d2190}{ssid}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Description détaillée}
+Declaration of the class \doxylink{class_network}{Network}. 
+
+This class is used to connect to the network and send data to the API 
+
+Définition à la ligne \mbox{\hyperlink{network_8h_source_l00022}{22}} du fichier \mbox{\hyperlink{network_8h_source}{network.\+h}}.
+
+
+
+\doxysubsubsection{Documentation des fonctions membres}
+\Hypertarget{class_network_af1c8cc8695858157c0cf77d9f15e381b}\label{class_network_af1c8cc8695858157c0cf77d9f15e381b} 
+\index{Network@{Network}!connection@{connection}}
+\index{connection@{connection}!Network@{Network}}
+\doxyparagraph{\texorpdfstring{connection()}{connection()}}
+{\footnotesize\ttfamily void Network\+::connection (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ssid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{password }\end{DoxyParamCaption})}
+
+
+
+Etablish a connection to the network. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{network_8cpp_source_l00022}{22}} du fichier \mbox{\hyperlink{network_8cpp_source}{network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ WiFi.begin(\mbox{\hyperlink{class_network_a5fc0dcbe1e531a60d246d8bd665d2190}{ssid}},\ \mbox{\hyperlink{class_network_a711c96bccc71814c8dd0b12b280b285e}{password}});}
+\DoxyCodeLine{00025\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}Connecting\ to\ WiFi"{}});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (WiFi.status()\ !=\ WL\_CONNECTED)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ delay(100);}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{network_8h_source_l00027}{password}}, et \mbox{\hyperlink{network_8h_source_l00026}{ssid}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00025}{setup()}}.
+
+\Hypertarget{class_network_a2e2e9b4a8f669f0f8a6b7348b18ad48c}\label{class_network_a2e2e9b4a8f669f0f8a6b7348b18ad48c} 
+\index{Network@{Network}!get@{get}}
+\index{get@{get}!Network@{Network}}
+\doxyparagraph{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int Network\+::get (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{url }\end{DoxyParamCaption})}
+
+
+
+Get data from the API. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{network_8cpp_source_l00078}{78}} du fichier \mbox{\hyperlink{network_8cpp_source}{network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ HTTPClient\ http;}
+\DoxyCodeLine{00081\ \ \ \ \ http.begin(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}});}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ httpResponseCode\ =\ http.GET();}
+\DoxyCodeLine{00083\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}HTTP\ Response\ code:\ "{}});}
+\DoxyCodeLine{00084\ \ \ \ \ Serial.println(httpResponseCode);}
+\DoxyCodeLine{00085\ \ \ \ \ http.end();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ httpResponseCode;}
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00019}{url}}.
+
+\Hypertarget{class_network_ae9987a05c6b768857bf48553c1bce933}\label{class_network_ae9987a05c6b768857bf48553c1bce933} 
+\index{Network@{Network}!postBMP@{postBMP}}
+\index{postBMP@{postBMP}!Network@{Network}}
+\doxyparagraph{\texorpdfstring{postBMP()}{postBMP()}}
+{\footnotesize\ttfamily int Network\+::post\+BMP (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{url,  }\item[{char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Send BMP data to the API. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{network_8cpp_source_l00038}{38}} du fichier \mbox{\hyperlink{network_8cpp_source}{network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ HTTPClient\ http;}
+\DoxyCodeLine{00041\ \ \ \ \ http.begin(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}});}
+\DoxyCodeLine{00042\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}Content-\/Type"{}},\ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{00043\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Sensor"{}},\ \textcolor{stringliteral}{"{}esp32-\/ABDECF"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Pin"{}},\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ httpCode\ =\ http.POST(data);}
+\DoxyCodeLine{00046\ \ \ \ \ http.end();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ Serial.println(httpCode);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ httpCode;}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00019}{url}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+\Hypertarget{class_network_a0ac656227e9aeda94abebbdb6712c05d}\label{class_network_a0ac656227e9aeda94abebbdb6712c05d} 
+\index{Network@{Network}!postDust@{postDust}}
+\index{postDust@{postDust}!Network@{Network}}
+\doxyparagraph{\texorpdfstring{postDust()}{postDust()}}
+{\footnotesize\ttfamily int Network\+::post\+Dust (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{url,  }\item[{char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Send Dust data to the API. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{network_8cpp_source_l00058}{58}} du fichier \mbox{\hyperlink{network_8cpp_source}{network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ HTTPClient\ http;}
+\DoxyCodeLine{00061\ \ \ \ \ http.begin(\mbox{\hyperlink{main_8cpp_ab135e5154c1828bef226a3df98ee3333}{url}});}
+\DoxyCodeLine{00062\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}Content-\/Type"{}},\ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Sensor"{}},\ \textcolor{stringliteral}{"{}esp32-\/ABDECF"{}});}
+\DoxyCodeLine{00064\ \ \ \ \ http.addHeader(\textcolor{stringliteral}{"{}X-\/Pin"{}},\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ httpCode\ =\ http.POST(data);}
+\DoxyCodeLine{00066\ \ \ \ \ http.end();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ Serial.println(httpCode);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ httpCode;}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{main_8cpp_source_l00019}{url}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00172}{loop()}}.
+
+
+
+\doxysubsubsection{Documentation des données membres}
+\Hypertarget{class_network_a711c96bccc71814c8dd0b12b280b285e}\label{class_network_a711c96bccc71814c8dd0b12b280b285e} 
+\index{Network@{Network}!password@{password}}
+\index{password@{password}!Network@{Network}}
+\doxyparagraph{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} Network\+::password\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{network_8h_source_l00027}{27}} du fichier \mbox{\hyperlink{network_8h_source}{network.\+h}}.
+
+
+
+Référencé par \mbox{\hyperlink{network_8cpp_source_l00022}{connection()}}.
+
+\Hypertarget{class_network_a5fc0dcbe1e531a60d246d8bd665d2190}\label{class_network_a5fc0dcbe1e531a60d246d8bd665d2190} 
+\index{Network@{Network}!ssid@{ssid}}
+\index{ssid@{ssid}!Network@{Network}}
+\doxyparagraph{\texorpdfstring{ssid}{ssid}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} Network\+::ssid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{network_8h_source_l00026}{26}} du fichier \mbox{\hyperlink{network_8h_source}{network.\+h}}.
+
+
+
+Référencé par \mbox{\hyperlink{network_8cpp_source_l00022}{connection()}}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{network_8h}{network.\+h}}\item 
+\mbox{\hyperlink{network_8cpp}{network.\+cpp}}\end{DoxyCompactItemize}

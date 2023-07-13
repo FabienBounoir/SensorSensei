@@ -1,0 +1,222 @@
+\hypertarget{class_lora_sender}{}\doxysubsection{Référence de la classe Lora\+Sender}
+\label{class_lora_sender}\index{LoraSender@{LoraSender}}
+
+
+Declaration of the class \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}}.  
+
+
+
+
+{\ttfamily \#include $<$lora\+Sender.\+h$>$}
+
+
+
+Graphe de collaboration de Lora\+Sender\+:
+% FIG 0
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_lora_sender_af294751d94399b045a021f9f79107be9}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initialisation du module \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}}. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{class_lora_sender_a3a086123486441cc18d37c73d1c8338a}{format\+Bmp280\+Data}} (double temperature, double pressure)
+\begin{DoxyCompactList}\small\item\em Format data from \mbox{\hyperlink{class_bmp280}{Bmp280}}. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{class_lora_sender_aff87a17e475bf8447e1f65d667b36ee3}{format\+Dust\+Sensor}} (double dust, boolean need\+Header)
+\begin{DoxyCompactList}\small\item\em Format data from Dust Sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_lora_sender_aeffcf7ddfbf9cdf247f42836d670b346}{Lora\+Sender}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lora_sender_a6275a5dec2bf194739fe2668d3048e10}{send\+Lora}} (char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Send data to Lora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Description détaillée}
+Declaration of the class \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}}. 
+
+This class is used to send data through the Lo\+Ra module 
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8h_source_l00020}{20}} du fichier \mbox{\hyperlink{lora_sender_8h_source}{lora\+Sender.\+h}}.
+
+
+
+\doxysubsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_lora_sender_aeffcf7ddfbf9cdf247f42836d670b346}\label{class_lora_sender_aeffcf7ddfbf9cdf247f42836d670b346}} 
+\index{LoraSender@{LoraSender}!LoraSender@{LoraSender}}
+\index{LoraSender@{LoraSender}!LoraSender@{LoraSender}}
+\doxyparagraph{\texorpdfstring{LoraSender()}{LoraSender()}}
+{\footnotesize\ttfamily Lora\+Sender\+::\+Lora\+Sender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}}. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00034}{34}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_lora_sender_af294751d94399b045a021f9f79107be9}\label{class_lora_sender_af294751d94399b045a021f9f79107be9}} 
+\index{LoraSender@{LoraSender}!begin@{begin}}
+\index{begin@{begin}!LoraSender@{LoraSender}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Lora\+Sender\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialisation du module \mbox{\hyperlink{class_lora_sender}{Lora\+Sender}}. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00043}{43}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ LoRa}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ SPI\ LoRa\ pins}}
+\DoxyCodeLine{00047\ \ \ SPI.begin(\mbox{\hyperlink{lora_sender_8cpp_a2dd443a4430713d325ab86895a4a45eb}{SCK}},\ \mbox{\hyperlink{lora_sender_8cpp_a7334c540878c8c4d801fd75ed9fd8063}{MISO}},\ \mbox{\hyperlink{lora_sender_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}{MOSI}},\ \mbox{\hyperlink{lora_sender_8cpp_a88f7782e210e61586baf33b93240d905}{SS}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ setup\ LoRa\ transceiver\ module}}
+\DoxyCodeLine{00050\ \ \ LoRa.setPins(\mbox{\hyperlink{lora_sender_8cpp_a88f7782e210e61586baf33b93240d905}{SS}},\ \mbox{\hyperlink{lora_sender_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}{RST}},\ \mbox{\hyperlink{lora_sender_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}{DIO0}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{if}\ (!LoRa.begin(\mbox{\hyperlink{lora_sender_8cpp_ab57e5c97e5d788f048284f1175c757b7}{BAND}}))}
+\DoxyCodeLine{00053\ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Starting\ LoRa\ failed!"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ Serial.println(\textcolor{stringliteral}{"{}LoRa\ Initializing\ OK!"{}});}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{lora_sender_8cpp_source_l00013}{BAND}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00010}{DIO0}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00006}{MISO}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00007}{MOSI}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00009}{RST}}, \mbox{\hyperlink{lora_sender_8cpp_source_l00005}{SCK}}, et \mbox{\hyperlink{lora_sender_8cpp_source_l00008}{SS}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00033}{setup()}}.
+
+\mbox{\Hypertarget{class_lora_sender_a3a086123486441cc18d37c73d1c8338a}\label{class_lora_sender_a3a086123486441cc18d37c73d1c8338a}} 
+\index{LoraSender@{LoraSender}!formatBmp280Data@{formatBmp280Data}}
+\index{formatBmp280Data@{formatBmp280Data}!LoraSender@{LoraSender}}
+\doxyparagraph{\texorpdfstring{formatBmp280Data()}{formatBmp280Data()}}
+{\footnotesize\ttfamily char $\ast$ Lora\+Sender\+::format\+Bmp280\+Data (\begin{DoxyParamCaption}\item[{double}]{temperature,  }\item[{double}]{pressure }\end{DoxyParamCaption})}
+
+
+
+Format data from \mbox{\hyperlink{class_bmp280}{Bmp280}}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em temperature} & \\
+\hline
+{\em pressure} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00069}{69}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ Create\ message\ for\ Bmp280}}
+\DoxyCodeLine{00072\ \ \ std::string\ message\ =\ std::string(\mbox{\hyperlink{lora_sender_8cpp_ad99f2e80756ded0c1a6199112db162c5}{HEADER}})\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ \textcolor{stringliteral}{"{}DATA"{}}\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ \textcolor{stringliteral}{"{}TEMP"{}}\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ std::to\_string(temperature)\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ \textcolor{stringliteral}{"{}PRESSURE"{}}\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ std::to\_string(pressure);}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(message.c\_str());}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{lora_sender_8cpp_source_l00015}{DELIMITER}}, et \mbox{\hyperlink{lora_sender_8cpp_source_l00016}{HEADER}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}.
+
+\mbox{\Hypertarget{class_lora_sender_aff87a17e475bf8447e1f65d667b36ee3}\label{class_lora_sender_aff87a17e475bf8447e1f65d667b36ee3}} 
+\index{LoraSender@{LoraSender}!formatDustSensor@{formatDustSensor}}
+\index{formatDustSensor@{formatDustSensor}!LoraSender@{LoraSender}}
+\doxyparagraph{\texorpdfstring{formatDustSensor()}{formatDustSensor()}}
+{\footnotesize\ttfamily char $\ast$ Lora\+Sender\+::format\+Dust\+Sensor (\begin{DoxyParamCaption}\item[{double}]{dust,  }\item[{boolean}]{need\+Header = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Format data from Dust Sensor. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dust} & \\
+\hline
+{\em need\+Header} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00083}{83}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ Create\ message\ for\ Dust\ Sensor}}
+\DoxyCodeLine{00086\ \ \ std::string\ message\ =\ needHeader\ ?\ std::string(\mbox{\hyperlink{lora_sender_8cpp_ad99f2e80756ded0c1a6199112db162c5}{HEADER}})\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ \textcolor{stringliteral}{"{}DATA"{}}\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ \textcolor{stringliteral}{"{}DUST"{}}\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ std::to\_string(dust)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ std::string(\mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}})\ +\ \textcolor{stringliteral}{"{}DUST"{}}\ +\ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}}\ +\ std::to\_string(dust);}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(message.c\_str());}
+\DoxyCodeLine{00089\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{lora_sender_8cpp_source_l00015}{DELIMITER}}, et \mbox{\hyperlink{lora_sender_8cpp_source_l00016}{HEADER}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}.
+
+\mbox{\Hypertarget{class_lora_sender_a6275a5dec2bf194739fe2668d3048e10}\label{class_lora_sender_a6275a5dec2bf194739fe2668d3048e10}} 
+\index{LoraSender@{LoraSender}!sendLora@{sendLora}}
+\index{sendLora@{sendLora}!LoraSender@{LoraSender}}
+\doxyparagraph{\texorpdfstring{sendLora()}{sendLora()}}
+{\footnotesize\ttfamily void Lora\+Sender\+::send\+Lora (\begin{DoxyParamCaption}\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Send data to Lora. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00097}{97}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ Send\ message}}
+\DoxyCodeLine{00100\ \ \ LoRa.beginPacket();}
+\DoxyCodeLine{00101\ \ \ LoRa.print(message);}
+\DoxyCodeLine{00102\ \ \ LoRa.endPacket();}
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lora_sender_8h}{lora\+Sender.\+h}}\item 
+\mbox{\hyperlink{lora_sender_8cpp}{lora\+Sender.\+cpp}}\end{DoxyCompactItemize}

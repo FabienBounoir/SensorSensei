@@ -1,0 +1,153 @@
+\hypertarget{lora_sender_8cpp}{}\doxysubsection{Référence du fichier lora\+Sender.\+cpp}
+\label{lora_sender_8cpp}\index{loraSender.cpp@{loraSender.cpp}}
+
+
+Définition de la classe lora\+Sender.  
+
+
+{\ttfamily \#include \char`\"{}lora\+Sender.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Lo\+Ra.\+h$>$}\newline
+{\ttfamily \#include $<$SPI.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_ab57e5c97e5d788f048284f1175c757b7}{BAND}}~868E6
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}{DIO0}}~26
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_a7334c540878c8c4d801fd75ed9fd8063}{MISO}}~19
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}{MOSI}}~27
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}{RST}}~14
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_a2dd443a4430713d325ab86895a4a45eb}{SCK}}~5
+\item 
+\#define \mbox{\hyperlink{lora_sender_8cpp_a88f7782e210e61586baf33b93240d905}{SS}}~18
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}{DELIMITER}} = \char`\"{};\char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{lora_sender_8cpp_ad99f2e80756ded0c1a6199112db162c5}{HEADER}} = \char`\"{}SENSOUNS\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Description détaillée}
+Définition de la classe lora\+Sender. 
+
+\begin{DoxyAuthor}{Auteur}
+Team Epitech (FPKGA)
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Définition dans le fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+
+\doxysubsubsection{Documentation des macros}
+\mbox{\Hypertarget{lora_sender_8cpp_ab57e5c97e5d788f048284f1175c757b7}\label{lora_sender_8cpp_ab57e5c97e5d788f048284f1175c757b7}} 
+\index{loraSender.cpp@{loraSender.cpp}!BAND@{BAND}}
+\index{BAND@{BAND}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{BAND}{BAND}}
+{\footnotesize\ttfamily \#define BAND~868E6}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}\label{lora_sender_8cpp_a95c9efcc1a55a72bd5cca0bcfcd18a0c}} 
+\index{loraSender.cpp@{loraSender.cpp}!DIO0@{DIO0}}
+\index{DIO0@{DIO0}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{DIO0}{DIO0}}
+{\footnotesize\ttfamily \#define DIO0~26}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00010}{10}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_a7334c540878c8c4d801fd75ed9fd8063}\label{lora_sender_8cpp_a7334c540878c8c4d801fd75ed9fd8063}} 
+\index{loraSender.cpp@{loraSender.cpp}!MISO@{MISO}}
+\index{MISO@{MISO}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{MISO}{MISO}}
+{\footnotesize\ttfamily \#define MISO~19}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00006}{6}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}\label{lora_sender_8cpp_a5d3f11f2fdf8a7e27b975291e0c2c8cc}} 
+\index{loraSender.cpp@{loraSender.cpp}!MOSI@{MOSI}}
+\index{MOSI@{MOSI}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{MOSI}{MOSI}}
+{\footnotesize\ttfamily \#define MOSI~27}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00007}{7}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}\label{lora_sender_8cpp_ac5d957e4fd3dc11cd97a54cf9ca057a4}} 
+\index{loraSender.cpp@{loraSender.cpp}!RST@{RST}}
+\index{RST@{RST}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{RST}{RST}}
+{\footnotesize\ttfamily \#define RST~14}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00009}{9}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_a2dd443a4430713d325ab86895a4a45eb}\label{lora_sender_8cpp_a2dd443a4430713d325ab86895a4a45eb}} 
+\index{loraSender.cpp@{loraSender.cpp}!SCK@{SCK}}
+\index{SCK@{SCK}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{SCK}{SCK}}
+{\footnotesize\ttfamily \#define SCK~5}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00005}{5}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_a88f7782e210e61586baf33b93240d905}\label{lora_sender_8cpp_a88f7782e210e61586baf33b93240d905}} 
+\index{loraSender.cpp@{loraSender.cpp}!SS@{SS}}
+\index{SS@{SS}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{SS}{SS}}
+{\footnotesize\ttfamily \#define SS~18}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00008}{8}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+
+\doxysubsubsection{Documentation des variables}
+\mbox{\Hypertarget{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}\label{lora_sender_8cpp_acf83573bf44751fa43386e03e29f0d71}} 
+\index{loraSender.cpp@{loraSender.cpp}!DELIMITER@{DELIMITER}}
+\index{DELIMITER@{DELIMITER}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{DELIMITER}{DELIMITER}}
+{\footnotesize\ttfamily char$\ast$ DELIMITER = \char`\"{};\char`\"{}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{lora_sender_8cpp_source_l00069}{Lora\+Sender\+::format\+Bmp280\+Data()}}, et \mbox{\hyperlink{lora_sender_8cpp_source_l00083}{Lora\+Sender\+::format\+Dust\+Sensor()}}.
+
+\mbox{\Hypertarget{lora_sender_8cpp_ad99f2e80756ded0c1a6199112db162c5}\label{lora_sender_8cpp_ad99f2e80756ded0c1a6199112db162c5}} 
+\index{loraSender.cpp@{loraSender.cpp}!HEADER@{HEADER}}
+\index{HEADER@{HEADER}!loraSender.cpp@{loraSender.cpp}}
+\doxyparagraph{\texorpdfstring{HEADER}{HEADER}}
+{\footnotesize\ttfamily char$\ast$ HEADER = \char`\"{}SENSOUNS\char`\"{}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{lora_sender_8cpp_source_l00016}{16}} du fichier \mbox{\hyperlink{lora_sender_8cpp_source}{lora\+Sender.\+cpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{lora_sender_8cpp_source_l00069}{Lora\+Sender\+::format\+Bmp280\+Data()}}, et \mbox{\hyperlink{lora_sender_8cpp_source_l00083}{Lora\+Sender\+::format\+Dust\+Sensor()}}.
+

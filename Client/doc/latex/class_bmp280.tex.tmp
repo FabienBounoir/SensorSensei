@@ -1,0 +1,172 @@
+\hypertarget{class_bmp280}{}\doxysubsection{Référence de la classe Bmp280}
+\label{class_bmp280}\index{Bmp280@{Bmp280}}
+
+
+Declaration of the class \mbox{\hyperlink{class_bmp280}{Bmp280}}.  
+
+
+
+
+{\ttfamily \#include $<$bmp280.\+h$>$}
+
+
+
+Graphe de collaboration de Bmp280\+:
+% FIG 0
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bmp280_a170a7231a6713ba197f1fc6b4b0a8b5e}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the bmp280 sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bmp280_ada2c2149d42ca7484277d668c9114fbf}{Bmp280}} ()
+\item 
+float \mbox{\hyperlink{class_bmp280_a5750046c47396786c248cff2ebf219e2}{read\+Pressure}} ()
+\begin{DoxyCompactList}\small\item\em Read the pressure from the bmp280 sensor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}{read\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Read the temperature from the bmp280 sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Adafruit\+\_\+\+BMP280 \mbox{\hyperlink{class_bmp280_a2bad6b146a641b370c46af461b3a1bea}{bmp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Description détaillée}
+Declaration of the class \mbox{\hyperlink{class_bmp280}{Bmp280}}. 
+
+This class is used to get the temperature and pressure from the bmp280 sensor 
+
+Définition à la ligne \mbox{\hyperlink{bmp280_8h_source_l00022}{22}} du fichier \mbox{\hyperlink{bmp280_8h_source}{bmp280.\+h}}.
+
+
+
+\doxysubsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_bmp280_ada2c2149d42ca7484277d668c9114fbf}\label{class_bmp280_ada2c2149d42ca7484277d668c9114fbf}} 
+\index{Bmp280@{Bmp280}!Bmp280@{Bmp280}}
+\index{Bmp280@{Bmp280}!Bmp280@{Bmp280}}
+\doxyparagraph{\texorpdfstring{Bmp280()}{Bmp280()}}
+{\footnotesize\ttfamily Bmp280\+::\+Bmp280 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{bmp280_8cpp_source_l00016}{16}} du fichier \mbox{\hyperlink{bmp280_8cpp_source}{bmp280.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_bmp280_a170a7231a6713ba197f1fc6b4b0a8b5e}\label{class_bmp280_a170a7231a6713ba197f1fc6b4b0a8b5e}} 
+\index{Bmp280@{Bmp280}!begin@{begin}}
+\index{begin@{begin}!Bmp280@{Bmp280}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Bmp280\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the bmp280 sensor. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{bmp280_8cpp_source_l00023}{23}} du fichier \mbox{\hyperlink{bmp280_8cpp_source}{bmp280.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ Wire.begin();}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{class_bmp280_a2bad6b146a641b370c46af461b3a1bea}{bmp}}.begin(\mbox{\hyperlink{bmp280_8cpp_ac166cbbe4d801176bd12575bae63b0e6}{GY\_BMP280\_ADDRESS}});}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{bmp280_8h_source_l00030}{bmp}}, et \mbox{\hyperlink{bmp280_8cpp_source_l00003}{GY\+\_\+\+BMP280\+\_\+\+ADDRESS}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00033}{setup()}}.
+
+\mbox{\Hypertarget{class_bmp280_a5750046c47396786c248cff2ebf219e2}\label{class_bmp280_a5750046c47396786c248cff2ebf219e2}} 
+\index{Bmp280@{Bmp280}!readPressure@{readPressure}}
+\index{readPressure@{readPressure}!Bmp280@{Bmp280}}
+\doxyparagraph{\texorpdfstring{readPressure()}{readPressure()}}
+{\footnotesize\ttfamily float Bmp280\+::read\+Pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the pressure from the bmp280 sensor. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{bmp280_8cpp_source_l00044}{44}} du fichier \mbox{\hyperlink{bmp280_8cpp_source}{bmp280.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bmp280_a2bad6b146a641b370c46af461b3a1bea}{bmp}}.readPressure()\ /\ 10;}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{bmp280_8h_source_l00030}{bmp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}.
+
+\mbox{\Hypertarget{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}\label{class_bmp280_a0a81db10823c5e56349fe92a0c70194f}} 
+\index{Bmp280@{Bmp280}!readTemperature@{readTemperature}}
+\index{readTemperature@{readTemperature}!Bmp280@{Bmp280}}
+\doxyparagraph{\texorpdfstring{readTemperature()}{readTemperature()}}
+{\footnotesize\ttfamily float Bmp280\+::read\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the temperature from the bmp280 sensor. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{bmp280_8cpp_source_l00034}{34}} du fichier \mbox{\hyperlink{bmp280_8cpp_source}{bmp280.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bmp280_a2bad6b146a641b370c46af461b3a1bea}{bmp}}.readTemperature();}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{bmp280_8h_source_l00030}{bmp}}.
+
+
+
+Référencé par \mbox{\hyperlink{main_8cpp_source_l00057}{loop()}}.
+
+
+
+\doxysubsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_bmp280_a2bad6b146a641b370c46af461b3a1bea}\label{class_bmp280_a2bad6b146a641b370c46af461b3a1bea}} 
+\index{Bmp280@{Bmp280}!bmp@{bmp}}
+\index{bmp@{bmp}!Bmp280@{Bmp280}}
+\doxyparagraph{\texorpdfstring{bmp}{bmp}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+BMP280 Bmp280\+::bmp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{bmp280_8h_source_l00030}{30}} du fichier \mbox{\hyperlink{bmp280_8h_source}{bmp280.\+h}}.
+
+
+
+Référencé par \mbox{\hyperlink{bmp280_8cpp_source_l00023}{begin()}}, \mbox{\hyperlink{bmp280_8cpp_source_l00044}{read\+Pressure()}}, et \mbox{\hyperlink{bmp280_8cpp_source_l00034}{read\+Temperature()}}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bmp280_8h}{bmp280.\+h}}\item 
+\mbox{\hyperlink{bmp280_8cpp}{bmp280.\+cpp}}\end{DoxyCompactItemize}

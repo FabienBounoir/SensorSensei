@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sensor sensei:  Fichier source de loraSender.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sensor sensei<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Client lora with sensor</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('lora_sender_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">loraSender.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lora_sender_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lora_sender_8h.html">loraSender.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;LoRa.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;SPI.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#a2dd443a4430713d325ab86895a4a45eb">    5</a></span><span class="preprocessor">#define SCK 5</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#a7334c540878c8c4d801fd75ed9fd8063">    6</a></span><span class="preprocessor">#define MISO 19</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#a5d3f11f2fdf8a7e27b975291e0c2c8cc">    7</a></span><span class="preprocessor">#define MOSI 27</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#a88f7782e210e61586baf33b93240d905">    8</a></span><span class="preprocessor">#define SS 18</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#ac5d957e4fd3dc11cd97a54cf9ca057a4">    9</a></span><span class="preprocessor">#define RST 14</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#a95c9efcc1a55a72bd5cca0bcfcd18a0c">   10</a></span><span class="preprocessor">#define DIO0 26</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// #define BAND 866E6</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#ab57e5c97e5d788f048284f1175c757b7">   13</a></span><span class="preprocessor">#define BAND 868E6</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">   15</a></span><span class="keywordtype">char</span> *<a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> = <span class="stringliteral">&quot;;&quot;</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="lora_sender_8cpp.html#ad99f2e80756ded0c1a6199112db162c5">   16</a></span><span class="keywordtype">char</span> *<a class="code hl_variable" href="lora_sender_8cpp.html#ad99f2e80756ded0c1a6199112db162c5">HEADER</a> = <span class="stringliteral">&quot;SENSOUNS&quot;</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_lora_sender.html#aeffcf7ddfbf9cdf247f42836d670b346">   34</a></span><a class="code hl_function" href="class_lora_sender.html#aeffcf7ddfbf9cdf247f42836d670b346">LoraSender::LoraSender</a>()</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_lora_sender.html#af294751d94399b045a021f9f79107be9">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_lora_sender.html#af294751d94399b045a021f9f79107be9">LoraSender::begin</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">// LoRa</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// SPI LoRa pins</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  SPI.begin(<a class="code hl_define" href="lora_sender_8cpp.html#a2dd443a4430713d325ab86895a4a45eb">SCK</a>, <a class="code hl_define" href="lora_sender_8cpp.html#a7334c540878c8c4d801fd75ed9fd8063">MISO</a>, <a class="code hl_define" href="lora_sender_8cpp.html#a5d3f11f2fdf8a7e27b975291e0c2c8cc">MOSI</a>, <a class="code hl_define" href="lora_sender_8cpp.html#a88f7782e210e61586baf33b93240d905">SS</a>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// setup LoRa transceiver module</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  LoRa.setPins(<a class="code hl_define" href="lora_sender_8cpp.html#a88f7782e210e61586baf33b93240d905">SS</a>, <a class="code hl_define" href="lora_sender_8cpp.html#ac5d957e4fd3dc11cd97a54cf9ca057a4">RST</a>, <a class="code hl_define" href="lora_sender_8cpp.html#a95c9efcc1a55a72bd5cca0bcfcd18a0c">DIO0</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">if</span> (!LoRa.begin(<a class="code hl_define" href="lora_sender_8cpp.html#ab57e5c97e5d788f048284f1175c757b7">BAND</a>))</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Serial.println(<span class="stringliteral">&quot;Starting LoRa failed!&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      ;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  Serial.println(<span class="stringliteral">&quot;LoRa Initializing OK!&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_lora_sender.html#a3a086123486441cc18d37c73d1c8338a">   69</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="class_lora_sender.html#a3a086123486441cc18d37c73d1c8338a">LoraSender::formatBmp280Data</a>(<span class="keywordtype">double</span> temperature, <span class="keywordtype">double</span> pressure)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">// Create message for Bmp280</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  std::string message = std::string(<a class="code hl_variable" href="lora_sender_8cpp.html#ad99f2e80756ded0c1a6199112db162c5">HEADER</a>) + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + <span class="stringliteral">&quot;DATA&quot;</span> + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + <span class="stringliteral">&quot;TEMP&quot;</span> + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + std::to_string(temperature) + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + <span class="stringliteral">&quot;PRESSURE&quot;</span> + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + std::to_string(pressure);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(message.c_str());</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_lora_sender.html#aff87a17e475bf8447e1f65d667b36ee3">   83</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="class_lora_sender.html#aff87a17e475bf8447e1f65d667b36ee3">LoraSender::formatDustSensor</a>(<span class="keywordtype">double</span> dust, <span class="keywordtype">boolean</span> needHeader = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="comment">// Create message for Dust Sensor</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::string message = needHeader ? std::string(<a class="code hl_variable" href="lora_sender_8cpp.html#ad99f2e80756ded0c1a6199112db162c5">HEADER</a>) + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + <span class="stringliteral">&quot;DATA&quot;</span> + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + <span class="stringliteral">&quot;DUST&quot;</span> + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + std::to_string(dust)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                   : std::string(<a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a>) + <span class="stringliteral">&quot;DUST&quot;</span> + <a class="code hl_variable" href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a> + std::to_string(dust);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(message.c_str());</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_lora_sender.html#a6275a5dec2bf194739fe2668d3048e10">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_lora_sender.html#a6275a5dec2bf194739fe2668d3048e10">LoraSender::sendLora</a>(<span class="keywordtype">char</span> *message)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// Send message</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  LoRa.beginPacket();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  LoRa.print(message);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  LoRa.endPacket();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="ttc" id="aclass_lora_sender_html_a3a086123486441cc18d37c73d1c8338a"><div class="ttname"><a href="class_lora_sender.html#a3a086123486441cc18d37c73d1c8338a">LoraSender::formatBmp280Data</a></div><div class="ttdeci">char * formatBmp280Data(double temperature, double pressure)</div><div class="ttdoc">Format data from Bmp280.</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00069">loraSender.cpp:69</a></div></div>
+<div class="ttc" id="aclass_lora_sender_html_a6275a5dec2bf194739fe2668d3048e10"><div class="ttname"><a href="class_lora_sender.html#a6275a5dec2bf194739fe2668d3048e10">LoraSender::sendLora</a></div><div class="ttdeci">void sendLora(char *message)</div><div class="ttdoc">Send data to Lora.</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00097">loraSender.cpp:97</a></div></div>
+<div class="ttc" id="aclass_lora_sender_html_aeffcf7ddfbf9cdf247f42836d670b346"><div class="ttname"><a href="class_lora_sender.html#aeffcf7ddfbf9cdf247f42836d670b346">LoraSender::LoraSender</a></div><div class="ttdeci">LoraSender()</div><div class="ttdoc">Constructeur de la classe LoraSender.</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00034">loraSender.cpp:34</a></div></div>
+<div class="ttc" id="aclass_lora_sender_html_af294751d94399b045a021f9f79107be9"><div class="ttname"><a href="class_lora_sender.html#af294751d94399b045a021f9f79107be9">LoraSender::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdoc">Initialisation du module LoraSender.</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00043">loraSender.cpp:43</a></div></div>
+<div class="ttc" id="aclass_lora_sender_html_aff87a17e475bf8447e1f65d667b36ee3"><div class="ttname"><a href="class_lora_sender.html#aff87a17e475bf8447e1f65d667b36ee3">LoraSender::formatDustSensor</a></div><div class="ttdeci">char * formatDustSensor(double dust, boolean needHeader)</div><div class="ttdoc">Format data from Dust Sensor.</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00083">loraSender.cpp:83</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_a2dd443a4430713d325ab86895a4a45eb"><div class="ttname"><a href="lora_sender_8cpp.html#a2dd443a4430713d325ab86895a4a45eb">SCK</a></div><div class="ttdeci">#define SCK</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00005">loraSender.cpp:5</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_a5d3f11f2fdf8a7e27b975291e0c2c8cc"><div class="ttname"><a href="lora_sender_8cpp.html#a5d3f11f2fdf8a7e27b975291e0c2c8cc">MOSI</a></div><div class="ttdeci">#define MOSI</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00007">loraSender.cpp:7</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_a7334c540878c8c4d801fd75ed9fd8063"><div class="ttname"><a href="lora_sender_8cpp.html#a7334c540878c8c4d801fd75ed9fd8063">MISO</a></div><div class="ttdeci">#define MISO</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00006">loraSender.cpp:6</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_a88f7782e210e61586baf33b93240d905"><div class="ttname"><a href="lora_sender_8cpp.html#a88f7782e210e61586baf33b93240d905">SS</a></div><div class="ttdeci">#define SS</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00008">loraSender.cpp:8</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_a95c9efcc1a55a72bd5cca0bcfcd18a0c"><div class="ttname"><a href="lora_sender_8cpp.html#a95c9efcc1a55a72bd5cca0bcfcd18a0c">DIO0</a></div><div class="ttdeci">#define DIO0</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00010">loraSender.cpp:10</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_ab57e5c97e5d788f048284f1175c757b7"><div class="ttname"><a href="lora_sender_8cpp.html#ab57e5c97e5d788f048284f1175c757b7">BAND</a></div><div class="ttdeci">#define BAND</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00013">loraSender.cpp:13</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_ac5d957e4fd3dc11cd97a54cf9ca057a4"><div class="ttname"><a href="lora_sender_8cpp.html#ac5d957e4fd3dc11cd97a54cf9ca057a4">RST</a></div><div class="ttdeci">#define RST</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00009">loraSender.cpp:9</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_acf83573bf44751fa43386e03e29f0d71"><div class="ttname"><a href="lora_sender_8cpp.html#acf83573bf44751fa43386e03e29f0d71">DELIMITER</a></div><div class="ttdeci">char * DELIMITER</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00015">loraSender.cpp:15</a></div></div>
+<div class="ttc" id="alora_sender_8cpp_html_ad99f2e80756ded0c1a6199112db162c5"><div class="ttname"><a href="lora_sender_8cpp.html#ad99f2e80756ded0c1a6199112db162c5">HEADER</a></div><div class="ttdeci">char * HEADER</div><div class="ttdef"><b>Definition:</b> <a href="lora_sender_8cpp_source.html#l00016">loraSender.cpp:16</a></div></div>
+<div class="ttc" id="alora_sender_8h_html"><div class="ttname"><a href="lora_sender_8h.html">loraSender.h</a></div><div class="ttdoc">Declaration of the class LoraSender.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_93fe3999d7a34569afd7f2a77496e459.html">loraSender</a></li><li class="navelem"><a class="el" href="lora_sender_8cpp.html">loraSender.cpp</a></li>
+    <li class="footer">Généré le Jeudi 8 Juin 2023 16:56:50 pour Sensor sensei par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

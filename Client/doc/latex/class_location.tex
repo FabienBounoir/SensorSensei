@@ -1,0 +1,162 @@
+\hypertarget{class_location}{}\doxysubsection{Référence de la classe Location}
+\label{class_location}\index{Location@{Location}}
+
+
+Declaration of the class \mbox{\hyperlink{class_location}{Location}}.  
+
+
+
+
+{\ttfamily \#include $<$location.\+hpp$>$}
+
+
+
+Graphe de collaboration de Location\+:
+% FIG 0
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_location_a87790c14997fd8cdd12080c78c9794bb}{Location}} ()
+\item 
+void \mbox{\hyperlink{class_location_a2b14ed211a89064536deece3cd3606a9}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update localisation data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_location_af5be2c6550bbd96137cbb3144ec3c529}{$\sim$\+Location}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_location_aa7fa1116e7a00501032a724156ec946a}{latitude}}
+\item 
+double \mbox{\hyperlink{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}{longitude}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Description détaillée}
+Declaration of the class \mbox{\hyperlink{class_location}{Location}}. 
+
+This class is used to get the location of the device 
+
+Définition à la ligne \mbox{\hyperlink{location_8hpp_source_l00021}{21}} du fichier \mbox{\hyperlink{location_8hpp_source}{location.\+hpp}}.
+
+
+
+\doxysubsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_location_a87790c14997fd8cdd12080c78c9794bb}\label{class_location_a87790c14997fd8cdd12080c78c9794bb}} 
+\index{Location@{Location}!Location@{Location}}
+\index{Location@{Location}!Location@{Location}}
+\doxyparagraph{\texorpdfstring{Location()}{Location()}}
+{\footnotesize\ttfamily Location\+::\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{location_8cpp_source_l00017}{17}} du fichier \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location\ Class\ Init"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}{longitude}}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_location_aa7fa1116e7a00501032a724156ec946a}{latitude}}\ =\ 0;}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{location_8hpp_source_l00028}{latitude}}, et \mbox{\hyperlink{location_8hpp_source_l00027}{longitude}}.
+
+\mbox{\Hypertarget{class_location_af5be2c6550bbd96137cbb3144ec3c529}\label{class_location_af5be2c6550bbd96137cbb3144ec3c529}} 
+\index{Location@{Location}!````~Location@{$\sim$Location}}
+\index{````~Location@{$\sim$Location}!Location@{Location}}
+\doxyparagraph{\texorpdfstring{$\sim$Location()}{~Location()}}
+{\footnotesize\ttfamily Location\+::$\sim$\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{location_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location\ Class\ Destroy"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_location_a2b14ed211a89064536deece3cd3606a9}\label{class_location_a2b14ed211a89064536deece3cd3606a9}} 
+\index{Location@{Location}!update@{update}}
+\index{update@{update}!Location@{Location}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Location\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update localisation data. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{location_8cpp_source_l00034}{34}} du fichier \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (Serial.available()\ >\ 0)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.encode(Serial.read());}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.isUpdated())}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}Latitude:\ "{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Serial.println(\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lat());}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}Longitude:\ "{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Serial.println(\mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lng());}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}{longitude}}\ =\ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lng();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_location_aa7fa1116e7a00501032a724156ec946a}{latitude}}\ =\ \mbox{\hyperlink{location_8cpp_a169c53997a7da1d0fb99aec1b4675ce8}{gps}}.location.lat();}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+
+
+Références \mbox{\hyperlink{location_8cpp_source_l00004}{gps}}, \mbox{\hyperlink{location_8hpp_source_l00028}{latitude}}, et \mbox{\hyperlink{location_8hpp_source_l00027}{longitude}}.
+
+
+
+\doxysubsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_location_aa7fa1116e7a00501032a724156ec946a}\label{class_location_aa7fa1116e7a00501032a724156ec946a}} 
+\index{Location@{Location}!latitude@{latitude}}
+\index{latitude@{latitude}!Location@{Location}}
+\doxyparagraph{\texorpdfstring{latitude}{latitude}}
+{\footnotesize\ttfamily double Location\+::latitude}
+
+
+
+Définition à la ligne \mbox{\hyperlink{location_8hpp_source_l00028}{28}} du fichier \mbox{\hyperlink{location_8hpp_source}{location.\+hpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{location_8cpp_source_l00017}{Location()}}, et \mbox{\hyperlink{location_8cpp_source_l00034}{update()}}.
+
+\mbox{\Hypertarget{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}\label{class_location_a1863cdc6296ff1cb37f4f4cf2d6ada6e}} 
+\index{Location@{Location}!longitude@{longitude}}
+\index{longitude@{longitude}!Location@{Location}}
+\doxyparagraph{\texorpdfstring{longitude}{longitude}}
+{\footnotesize\ttfamily double Location\+::longitude}
+
+
+
+Définition à la ligne \mbox{\hyperlink{location_8hpp_source_l00027}{27}} du fichier \mbox{\hyperlink{location_8hpp_source}{location.\+hpp}}.
+
+
+
+Référencé par \mbox{\hyperlink{location_8cpp_source_l00017}{Location()}}, et \mbox{\hyperlink{location_8cpp_source_l00034}{update()}}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{location_8hpp}{location.\+hpp}}\item 
+\mbox{\hyperlink{location_8cpp}{location.\+cpp}}\end{DoxyCompactItemize}
